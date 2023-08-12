@@ -18,7 +18,7 @@
             <!-- LevelFilter: 级别过滤器，根据日志级别进行过滤 -->
             <level>DEBUG</level>
             <onMatch>ACCEPT</onMatch>
-            <onMismatch>DENY</onMismatch>
+            <onMismatch>DENY</onMismatch>o
         </filter>
         <encoder>
             <Pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%5level] [%thread] %logger{0} %msg%n</Pattern>

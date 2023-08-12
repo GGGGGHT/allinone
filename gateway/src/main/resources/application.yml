@@ -1,0 +1,19 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: misc_route
+          uri: http://localhost:8889
+          predicates:
+            - Path=/misc/**
+          filters:
+            - TraceIdFilter
+            - RewritePath=/misc/(?<remaining>.*), /$\{remaining}
+
+        - id: svc_route
+          uri: http://localhost:8890
+          predicates:
+            - Path=/svc/**
+          filters:
+            - TraceIdFilter
+            - RewritePath=/svc/(?<remaining>.*), /$\{remaining}
